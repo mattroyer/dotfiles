@@ -1,0 +1,8 @@
+allow_images=false
+hide_scroll=true
+matching=fuzzy
+no_actions=true
+term=kitty
+mode=drun
+prompt=|
+--show

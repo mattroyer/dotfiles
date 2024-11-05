@@ -1,0 +1,97 @@
+{
+  "layer": "top", // Waybar at top layer
+  "modules-left": ["hyprland/workspaces", "custom/cava"],
+  "modules-right": ["custom/pacman", "backlight", "network", "pulseaudio", "battery", "clock"],
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace +1",
+    "on-scroll-down": "hyprctl dispatch workspace -1",
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+    }, 
+    "window-rewrite-default": "",
+    "format-window-separator": " ",
+    "window-rewrite": {
+      "class<firefox>": "<span foreground='#ff9e64'></span>",
+      "class<org.wezfurlong.kitty> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
+      "class<kitty> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
+      "class<neovide>": "<span foreground='#66ac44'></span>",
+      "class<kitty>": "<span foreground='#81A1C1'></span>",
+      "class<org.wezfurlong.kitty>": "<span foreground='#81A1C1'></span>",
+      "spotify": "<span foreground='#1ed760'></span>",
+      "class<discord>": "<span foreground='#5865f2'>󰙯</span>",
+      "class<ferdium>": "<span foreground='#5865f2'>󰭹</span>",
+      "class<rambox>": "<span foreground='#5865f2'>󰭹</span>"
+    }
+  },
+  "backlight": {
+    "interval": 2,
+    "align": 0,
+    "rotate": 0,
+    "format": "{icon}",
+    "format-icons": ["","","","","","","","","","","","","",""],
+    "tooltip-format": "backlight {percent}%",
+    "icon-size": 10,
+    "on-click": "",
+    "on-click-middle": "",
+    "on-click-right": "",
+    "on-update": "",
+    "smooth-scrolling-threshold": 1,
+  },
+  "custom/pacman": {
+    "format": "{}{icon}",
+    "return-type": "json",
+    "format-icons": {
+      "pending-updates": "  ",
+      "updated": ""
+    },
+    "exec-if": "which waybar-updates",
+    "exec": "waybar-updates",
+    "on-click": "kitty yay"
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%B %d %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%I:%M %p}"
+  },
+  "battery": {
+    //"states": {
+    //    // "good": 95,
+    //    "warning": 30,
+    //    "critical": 15
+    //},
+    "format": "　{capacity}%"
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    //"format-icons": ["", "", "", ""]
+  },
+  "custom/cava": {
+    "exec": "~/.config/scripts/waybarCava.sh",
+    "format": "{}"
+  },
+  "network": {
+    // "interface": "wlp2s0", // (Optional) To force the use of this interface
+    "format-wifi": "　{signalStrength}%",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ethernet",
+    "format-disconnected": "⚠"
+  },
+  "pulseaudio": {
+    //"scroll-step": 1,
+    "format": "　{volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
+ 
+   "on-click": "pavucontrol"
+  }
+}
