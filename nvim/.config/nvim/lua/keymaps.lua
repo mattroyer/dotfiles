@@ -24,7 +24,6 @@ addkey({ 'n', 'v' }, 'j',  "v:count == 0 ? 'gj' : 'j'", 'Remap j to gj for line 
 addkey('i', 'kj',          '<ESC>',                         'Press `jk` to invoke Esc')
 addkey('n', '<leader>o',   '<Cmd>:update<CR> <Cmd>:source<CR>',       'Reload editor')
 addkey('n', '<leader>e',   '<cmd>Oil<CR>',                  'Open Oil with `<leader>e`')
-addkey('n', '<leader>nh',  ':nohl<CR>',                     'Clear annoying search highlights by pressing `,nh`')
 addkey('n', '<leader>+',   '<C-a>',                         'Increment number with `<leader>+`')
 addkey('n', '<leader>-',   '<C-x>',                         'Decrement number with `<leader>-`')
 addkey('n', '<leader>sv',  '<C-w>v',                        'Split window vertically')
