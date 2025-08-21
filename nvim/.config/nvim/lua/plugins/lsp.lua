@@ -21,7 +21,7 @@ return {
     },
     opts = {
       ensure_installed = {
-        "lua_ls", "pyright", "ruby_lsp", "gopls",
+        "lua_ls", "pyright", "gopls",
         "clangd", "html", "cssls", "jsonls",
         "emmet_language_server", "harper_ls",
         "zk"
