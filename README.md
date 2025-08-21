@@ -1,4 +1,7 @@
 ### Dotfiles
 
-Thinking of using `stow` for these.
+```
+cd ~/dotfiles
+stow nvim
+```
 
